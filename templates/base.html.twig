@@ -16,14 +16,27 @@
     </head>
     <body> 
         <header>
-            <img src="public/img/logo_nain.png" alt="">
-            <ul class='nav-bar'>
-                <li><a href="{{path('app_accueil')}}">Accueil</a></li>
-                <li><a href="{{path('app_forum')}}">Forum</a></li>
-                <li><a href="{{path('app_inscription')}}">Inscription</a></li>
-                <li><a href="{{path('app_profile')}}">profile</a></li>
-            </ul>
+            <div>
+                <ul class='nav-bar'>
+                    <img src="{{asset('img/logo_nain.png')}}" alt="logo_nain_de_jardin"> 
+                    <li><a href="{{path('app_accueil')}}">Accueil</a></li>
+                    <li><a href="{{path('app_forum')}}">Forum</a></li>
+                    <li><a href="{{path('app_inscription')}}">Inscription</a></li>
+                    <li><a href="{{path('app_profile')}}">profile</a></li>
+                </ul>
+            </div>
         </header>
         {% block body %}{% endblock %}
+        <footer>
+            <div>
+                <div>
+                    <p>Copyright ©</p>
+                </div>
+                <div>
+                    <p>Mylan brasier</p>
+                    <p>Talis 2026</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
