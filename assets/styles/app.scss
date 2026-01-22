@@ -1,0 +1,18 @@
+body{
+    background-color: white;
+    margin: 0;
+    header{
+        background-color: #249618;
+        opacity: 80%;
+        padding: 20px;
+        ul{
+            display: flex;
+            gap: 100px;
+            justify-content:right;
+            margin-right: 80px;
+            li{
+                list-style: none;
+            }
+        }
+    }
+}
