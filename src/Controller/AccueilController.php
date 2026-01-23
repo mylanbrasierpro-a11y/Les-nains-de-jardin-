@@ -11,8 +11,9 @@ final class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
+        $nainDeJardin = $nainDeJardinrepository->finAll();
         return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+            'accueil' => $nain_de_jardin,
         ]);
     }
 }
