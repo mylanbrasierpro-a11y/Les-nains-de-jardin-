@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class AccueilController extends AbstractController
 {
     #[Route('/', name: 'app_accueil')]
-    public function index(): Response
+    public function index(PostRepository $nainDeJardinrepository): Response
     {
-        $nainDeJardin = $nainDeJardinrepository->finAll();
+        $nainDeJardin = $nainDeJardinrepository->findAll();
         return $this->render('accueil/index.html.twig', [
-            'accueil' => $nain_de_jardin,
+            'nains' => $nainDeJardin,
         ]);
     }
 }

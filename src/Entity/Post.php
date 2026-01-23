@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
+use App\Entity\User;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PostRepository;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -17,9 +18,6 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $img = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
@@ -27,7 +25,7 @@ class Post
     private ?string $taille = null;
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
-    private ?user $user_id = null;
+    private ?User $user_id = null;
 
     public function getId(): ?int
     {
@@ -42,18 +40,6 @@ class Post
     public function setTitre(string $titre): static
     {
         $this->titre = $titre;
-
-        return $this;
-    }
-
-    public function getImg(): ?string
-    {
-        return $this->img;
-    }
-
-    public function setImg(string $img): static
-    {
-        $this->img = $img;
 
         return $this;
     }
@@ -82,12 +68,12 @@ class Post
         return $this;
     }
 
-    public function getUserId(): ?user
+    public function getUserId(): ?User
     {
         return $this->user_id;
     }
 
-    public function setUserId(?user $user_id): static
+    public function setUserId(?User $user_id): static
     {
         $this->user_id = $user_id;
 

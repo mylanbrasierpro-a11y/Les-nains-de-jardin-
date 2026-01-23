@@ -55,7 +55,12 @@ body{
         position: relative;
         margin: 1%;
         box-shadow: 0px 5px 10px gray;
-    }
+      
+    }  
+    .boucle{
+            display: flex;
+            justify-content: center;
+        }
     footer{
         background-color: #249618;
         margin: 0;
