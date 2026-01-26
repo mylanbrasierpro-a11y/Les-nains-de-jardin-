@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddnainController!{% endblock %}
+
+{% block body %}
+    <div class='container-nain'>
+        <div class='form'>
+            {{form_start(addnain)}}
+                {{form_widget(addnain)}}
+                <button>Publier</button>
+            {{ form_end(addnain)}}
+        </div>
+    </div>
+{% endblock %}

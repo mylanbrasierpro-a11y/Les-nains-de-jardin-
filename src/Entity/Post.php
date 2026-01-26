@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
+use App\Entity\Post;
 use App\Entity\User;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PostRepository;
+use Symfony\Component\HttpFoudation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+#[Vich\Uploadable]
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
 {
@@ -26,6 +31,15 @@ class Post
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
     private ?User $user_id = null;
+
+    #[Vich\UploadableField(mapping:"images", fileNameProperty:'imageName')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?DateTimeImmutable $updateAt = null;
 
     public function getId(): ?int
     {
@@ -78,5 +92,28 @@ class Post
         $this->user_id = $user_id;
 
         return $this;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if ($imageFile) {
+            $this->updateAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->image = $imageName;
+    }
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
     }
 }
