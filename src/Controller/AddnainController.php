@@ -21,7 +21,6 @@ final class AddnainController extends AbstractController
         $form = $this->createForm(AddnainType::class, $nain);
 
         $form->handleRequest($request);
-
         if($form->isSubmitted()&& $form->isValid()){
 
             $entityManager->persist($nain);

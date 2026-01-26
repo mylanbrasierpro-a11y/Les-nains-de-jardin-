@@ -8,7 +8,7 @@ use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PostRepository;
-use Symfony\Component\HttpFoudation\File\File;
+use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[Vich\Uploadable]
@@ -110,7 +110,7 @@ class Post
 
     public function setImageName(?string $imageName): void
     {
-        $this->image = $imageName;
+        $this->imageName = $imageName;
     }
     public function getImageName(): ?string
     {
