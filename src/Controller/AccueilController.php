@@ -12,7 +12,7 @@ final class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(PostRepository $nainDeJardinrepository): Response
     {
-        $nainDeJardin = $nainDeJardinrepository->findAll();
+        $nainDeJardin = $nainDeJardinrepository->findby([], ['id'=>'DESC'],4);
         return $this->render('accueil/index.html.twig', [
             'nains' => $nainDeJardin,
         ]);

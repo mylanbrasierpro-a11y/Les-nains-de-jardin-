@@ -13,12 +13,11 @@
             <div  class="boucle">
                 {% for nain in nains %}
                 <div class="card">
-                    <img src="{{ asset('uploads/images/' ~ nain.imageName) }}" alt="">
+                    <img src="{{ asset('uploads/images/' ~ nain.imageName) }}" alt="" class='import-bdd'>
                     <div>
-                        <p>{{ nain.titre }}</p>
+                        <h2>{{ nain.titre }}</h2>
                         <p>{{ nain.description }}</p>
                         <p>{{ nain.taille }}</p>
-                        <p>{{ nain.imageName }}</p>
                     </div>    
                 </div> 
                 {% endfor %}

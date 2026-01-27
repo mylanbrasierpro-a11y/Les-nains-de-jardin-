@@ -29,9 +29,11 @@ class AddnainType extends AbstractType
                             'image/pgn',
                             'image/gif',
                             'image/jpg',
+                            'image/webp',
+
 
                         ],
-                        'mimeTypesMessage' => 'veuillez uploader une image calide ( JPEG, PNG, GIF, JPG)'
+                        'mimeTypesMessage' => 'veuillez uploader une image valide ( JPEG, PNG, GIF, JPG, WEBP)'
                     ])
                 ]
             ]);
