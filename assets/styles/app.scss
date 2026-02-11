@@ -1,66 +1,19 @@
+/*abstracts*/
+@use "abstracts/variable";
 
-@font-face {
-    font-family: "roboto";
-    src: url(../../public/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf);
-}
-body{
-    margin-top: 4rem;
-    h1{
-        margin: 0;
-    }
+/*components*/
+@use "components/btn";
+@use "components/cards";
 
-    }    
-    .card{
-        width: 28%;
-        border-radius: 10px;
-        background-size: cover;
-        text-align: center;
-        position: relative;
-        margin: 1%;
-        box-shadow: 0px 5px 10px gray;
-        margin-top: 120px;
-            .import-bdd{
-                width: 100%;
-                height: 50%;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-            }
-    }  
-    .boucle{
-            display: flex;
-            justify-content:space-evenly;
-            flex-wrap: wrap;
-        }
-    footer{
-        background-color: #249618;
-        margin: 0;
-        display: flex;
-        p{
-            margin: 0;
-        }
-    }
-    .container-nain{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .form{
-            margin-top: 150px;
-        }
-    }
-    .inscription{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .form-inscription{
-            margin-top: 150px;
-            margin-bottom: 520px;
-        }
-    }
-    .connexion{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-            .container{
-            margin-top: 150px;
-        }
-    }
+
+// /*layout*/
+@use "layout/header";
+@use "layout/footer";
+@use "layout/acceuil";
+@use "layout/addnain";
+@use "layout/connexion";
+@use "layout/inscription";
+
+// /*base*/
+@use "base/base";
+@use "base/fonts";

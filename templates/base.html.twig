@@ -21,9 +21,15 @@
                     <img src="{{asset('img/logo_nain.png')}}" alt="logo_nain_de_jardin"> 
                     <li><a href="{{path('app_accueil')}}">Accueil</a></li>
                     <li><a href="{{path('app_forum')}}">Forum</a></li>
-                    <li><a href="{{path('inscription')}}">Inscription</a></li>                    
-                    <li><a href="{{path('app_login')}}">Connexion</a></li>
-                    <li><a href="{{path('app_profile')}}">profile</a></li>
+                    {% if not is_granted('ROLE_USER')%}
+                        <li><a href="{{path('inscription')}}">Inscription</a></li>                    
+                        <li><a href="{{path('app_login')}}">Connexion</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER')%}
+                        <li><a href="{{path('app_addnain')}}">Publier</a></li>
+                        <li><a href="{{path('app_profile')}}">Profile</a></li>
+                        <li><a href="{{path('app_logout')}}">Deconnexion</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </header>

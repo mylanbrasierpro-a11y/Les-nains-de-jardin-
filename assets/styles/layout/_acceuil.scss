@@ -1,5 +1,5 @@
     .banner{
-        background-image: url('../../public/img/banner.png');
+        background-image: url('/public/img/banner.png');
         height: 550px;
         background-position: center;
         background-size: cover;
@@ -8,8 +8,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        object-fit: cover;
         h1{
             color: #249618;
             font-size: 50px;
         }
+    }
+    .title-accueil{
+        text-align: center;
     }

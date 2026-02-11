@@ -16,10 +16,14 @@ final class AddnainController extends AbstractController
     #[Route('/addnain', name: 'app_addnain')]
     public function addArticle(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
+
         $nain = new Post();
+        
+        $nain->setUserId($user);
 
         $form = $this->createForm(AddnainType::class, $nain);
-
+        
         $form->handleRequest($request);
         if($form->isSubmitted()&& $form->isValid()){
 
